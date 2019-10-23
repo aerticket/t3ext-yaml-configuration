@@ -293,27 +293,6 @@ class AbstractCommandController extends CommandController
         return $configuration;
     }
 
-    /**
-     * Remove auto_increment type fields from array
-     *
-     * @since 1.0.0
-     *
-     * @param array $fields
-     * @param string $table
-     *
-     * @return array
-     */
-    protected function removeAutoIncrementFields($fields, $table)
-    {
-        $autoIncrementFields = $this->getAutoIncrementFields($table);
-        foreach ($fields as $key => $value) {
-            if (in_array($key, $autoIncrementFields)) {
-                unset($fields[$key]);
-            }
-        }
-
-        return $fields;
-    }
 
     /**
      * Update timestamp fields
